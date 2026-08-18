@@ -1,0 +1,44 @@
+{
+  "2025": {
+    "english": {
+      "physics": [
+        { "id": "unit1", "name": "2025 Physics Unit 1 Notes", "url": "https://example.com/notes/2025/english/physics/unit1.pdf" },
+        { "id": "unit2", "name": "2025 Physics Unit 2 Notes", "url": "https://example.com/notes/2025/english/physics/unit2.pdf" }
+      ],
+      "chemistry": [
+        { "id": "organic", "name": "2025 Organic Chemistry Notes", "url": "https://example.com/notes/2025/english/chemistry/organic.pdf" }
+      ]
+    },
+    "tamil": {
+      "physics": [
+        { "id": "unit1", "name": "2025 Physics Unit 1 Notes", "url": "https://example.com/notes/2025/tamil/physics/unit1.pdf" }
+      ]
+    },
+    "sinhala": {
+      "physics": [
+        { "id": "unit1", "name": "2025 Physics Unit 1 Notes", "url": "https://example.com/notes/2025/sinhala/physics/unit1.pdf" }
+      ]
+    }
+  },
+  "2024": {
+    "english": {
+      "combined-mathematics": [
+        { "id": "algebra", "name": "2024 Algebra Notes", "url": "https://example.com/notes/2024/english/combined-mathematics/algebra.pdf" },
+        { "id": "calculus", "name": "2024 Calculus Notes", "url": "https://example.com/notes/2024/english/combined-mathematics/calculus.pdf" }
+      ],
+      "biology": [
+        { "id": "genetics", "name": "2024 Genetics Notes", "url": "https://example.com/notes/2024/english/biology/genetics.pdf" }
+      ]
+    },
+    "tamil": {
+      "combined-mathematics": [
+        { "id": "algebra", "name": "2024 Algebra Notes", "url": "https://example.com/notes/2024/tamil/combined-mathematics/algebra.pdf" }
+      ]
+    },
+    "sinhala": {
+      "biology": [
+        { "id": "genetics", "name": "2024 Genetics Notes", "url": "https://example.com/notes/2024/sinhala/biology/genetics.pdf" }
+      ]
+    }
+  }
+}

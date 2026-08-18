@@ -1,0 +1,118 @@
+{
+  "2025": {
+    "english": {
+      "physics": [
+        { "id": "paper", "name": "2025 Physics Paper", "url": "https://example.com/papers/2025/english/physics/paper.pdf" },
+        { "id": "marking", "name": "2025 Physics Marking Scheme", "url": "https://example.com/papers/2025/english/physics/marking.pdf" }
+      ],
+      "chemistry": [
+        { "id": "paper", "name": "2025 Chemistry Paper", "url": "https://example.com/papers/2025/english/chemistry/paper.pdf" }
+      ],
+      "biology": [
+        { "id": "paper", "name": "2025 Biology Paper", "url": "https://example.com/papers/2025/english/biology/paper.pdf" }
+      ],
+      "combined-mathematics": [
+        { "id": "paper", "name": "2025 Combined Mathematics Paper", "url": "https://example.com/papers/2025/english/combined-mathematics/paper.pdf" }
+      ],
+      "ict": [
+        { "id": "paper", "name": "2025 ICT Paper", "url": "https://example.com/papers/2025/english/ict/paper.pdf" }
+      ]
+    },
+    "tamil": {
+      "physics": [
+        { "id": "paper", "name": "2025 Physics Paper", "url": "https://example.com/papers/2025/tamil/physics/paper.pdf" },
+        { "id": "marking", "name": "2025 Physics Marking Scheme", "url": "https://example.com/papers/2025/tamil/physics/marking.pdf" }
+      ],
+      "chemistry": [
+        { "id": "paper", "name": "2025 Chemistry Paper", "url": "https://example.com/papers/2025/tamil/chemistry/paper.pdf" }
+      ],
+      "biology": [
+        { "id": "paper", "name": "2025 Biology Paper", "url": "https://example.com/papers/2025/tamil/biology/paper.pdf" }
+      ],
+      "ict": [
+        { "id": "paper", "name": "2025 ICT Paper", "url": "https://example.com/papers/2025/tamil/ict/paper.pdf" }
+      ]
+    },
+    "sinhala": {
+      "physics": [
+        { "id": "paper", "name": "2025 Physics Paper", "url": "https://example.com/papers/2025/sinhala/physics/paper.pdf" }
+      ],
+      "chemistry": [
+        { "id": "paper", "name": "2025 Chemistry Paper", "url": "https://example.com/papers/2025/sinhala/chemistry/paper.pdf" }
+      ],
+      "combined-mathematics": [
+        { "id": "paper", "name": "2025 Combined Mathematics Paper", "url": "https://example.com/papers/2025/sinhala/combined-mathematics/paper.pdf" }
+      ]
+    }
+  },
+  "2024": {
+    "english": {
+      "physics": [
+        { "id": "paper", "name": "2024 Physics Paper", "url": "https://example.com/papers/2024/english/physics/paper.pdf" },
+        { "id": "part1", "name": "2024 Physics Part I", "url": "https://example.com/papers/2024/english/physics/part1.pdf" },
+        { "id": "part2", "name": "2024 Physics Part II", "url": "https://example.com/papers/2024/english/physics/part2.pdf" }
+      ],
+      "chemistry": [
+        { "id": "paper", "name": "2024 Chemistry Paper", "url": "https://example.com/papers/2024/english/chemistry/paper.pdf" }
+      ],
+      "biology": [
+        { "id": "paper", "name": "2024 Biology Paper", "url": "https://example.com/papers/2024/english/biology/paper.pdf" }
+      ],
+      "accounting": [
+        { "id": "paper", "name": "2024 Accounting Paper", "url": "https://example.com/papers/2024/english/accounting/paper.pdf" }
+      ]
+    },
+    "tamil": {
+      "physics": [
+        { "id": "paper", "name": "2024 Physics Paper", "url": "https://example.com/papers/2024/tamil/physics/paper.pdf" }
+      ],
+      "chemistry": [
+        { "id": "paper", "name": "2024 Chemistry Paper", "url": "https://example.com/papers/2024/tamil/chemistry/paper.pdf" }
+      ],
+      "biology": [
+        { "id": "paper", "name": "2024 Biology Paper", "url": "https://example.com/papers/2024/tamil/biology/paper.pdf" }
+      ]
+    },
+    "sinhala": {
+      "physics": [
+        { "id": "paper", "name": "2024 Physics Paper", "url": "https://example.com/papers/2024/sinhala/physics/paper.pdf" },
+        { "id": "marking", "name": "2024 Physics Marking Scheme", "url": "https://example.com/papers/2024/sinhala/physics/marking.pdf" }
+      ],
+      "chemistry": [
+        { "id": "paper", "name": "2024 Chemistry Paper", "url": "https://example.com/papers/2024/sinhala/chemistry/paper.pdf" }
+      ],
+      "ict": [
+        { "id": "paper", "name": "2024 ICT Paper", "url": "https://example.com/papers/2024/sinhala/ict/paper.pdf" }
+      ]
+    }
+  },
+  "2023": {
+    "english": {
+      "physics": [
+        { "id": "paper", "name": "2023 Physics Paper", "url": "https://example.com/papers/2023/english/physics/paper.pdf" }
+      ],
+      "chemistry": [
+        { "id": "paper", "name": "2023 Chemistry Paper", "url": "https://example.com/papers/2023/english/chemistry/paper.pdf" }
+      ],
+      "biology": [
+        { "id": "paper", "name": "2023 Biology Paper", "url": "https://example.com/papers/2023/english/biology/paper.pdf" }
+      ]
+    },
+    "tamil": {
+      "physics": [
+        { "id": "paper", "name": "2023 Physics Paper", "url": "https://example.com/papers/2023/tamil/physics/paper.pdf" }
+      ],
+      "biology": [
+        { "id": "paper", "name": "2023 Biology Paper", "url": "https://example.com/papers/2023/tamil/biology/paper.pdf" }
+      ]
+    },
+    "sinhala": {
+      "physics": [
+        { "id": "paper", "name": "2023 Physics Paper", "url": "https://example.com/papers/2023/sinhala/physics/paper.pdf" }
+      ],
+      "chemistry": [
+        { "id": "paper", "name": "2023 Chemistry Paper", "url": "https://example.com/papers/2023/sinhala/chemistry/paper.pdf" }
+      ]
+    }
+  }
+}

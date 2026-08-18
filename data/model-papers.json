@@ -1,0 +1,43 @@
+{
+  "2025": {
+    "english": {
+      "physics": [
+        { "id": "model1", "name": "2025 Physics Model Paper 1", "url": "https://example.com/model-papers/2025/english/physics/model1.pdf" },
+        { "id": "model2", "name": "2025 Physics Model Paper 2", "url": "https://example.com/model-papers/2025/english/physics/model2.pdf" }
+      ],
+      "chemistry": [
+        { "id": "model1", "name": "2025 Chemistry Model Paper 1", "url": "https://example.com/model-papers/2025/english/chemistry/model1.pdf" }
+      ]
+    },
+    "tamil": {
+      "physics": [
+        { "id": "model1", "name": "2025 Physics Model Paper 1", "url": "https://example.com/model-papers/2025/tamil/physics/model1.pdf" }
+      ]
+    },
+    "sinhala": {
+      "physics": [
+        { "id": "model1", "name": "2025 Physics Model Paper 1", "url": "https://example.com/model-papers/2025/sinhala/physics/model1.pdf" }
+      ]
+    }
+  },
+  "2024": {
+    "english": {
+      "biology": [
+        { "id": "model1", "name": "2024 Biology Model Paper 1", "url": "https://example.com/model-papers/2024/english/biology/model1.pdf" }
+      ],
+      "ict": [
+        { "id": "model1", "name": "2024 ICT Model Paper 1", "url": "https://example.com/model-papers/2024/english/ict/model1.pdf" }
+      ]
+    },
+    "tamil": {
+      "biology": [
+        { "id": "model1", "name": "2024 Biology Model Paper 1", "url": "https://example.com/model-papers/2024/tamil/biology/model1.pdf" }
+      ]
+    },
+    "sinhala": {
+      "ict": [
+        { "id": "model1", "name": "2024 ICT Model Paper 1", "url": "https://example.com/model-papers/2024/sinhala/ict/model1.pdf" }
+      ]
+    }
+  }
+}
