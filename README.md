@@ -62,19 +62,17 @@ Get a Google API key at https://aistudio.google.com/apikey
 npm start
 ```
 
-The bot asks for a phone number — type it (e.g. `94764642432`) and use the printed **pairing code**, or press Enter for QR login.
+The bot asks for a phone number — type it (e.g. `94764642432`) and use the printed **pairing code**.
 
-### Login with pairing code (recommended)
+### Login with pairing code (only method)
+
+QR login is **not supported** — pairing code is the only way to connect the bot.
 
 Set `PHONE_NUMBER` in `.env` (or just type the number when prompted). The bot prints a **pairing code** in the terminal:
 
 1. Open WhatsApp → Settings → Linked Devices → Link a Device
 2. Tap "Link with phone number instead"
 3. Enter the pairing code shown in the terminal
-
-### Login with QR
-
-Leave `PHONE_NUMBER` empty and just press Enter at the prompt. Scan the QR code that appears in the terminal with WhatsApp → Linked Devices.
 
 ## Adding Papers / Notes / Model Papers
 
@@ -166,6 +164,6 @@ al-insight-bot/
 
 ## Troubleshooting
 
-- **No QR shown** — check `npm start` output; if the session folder exists from an old login, delete `sessions/` and restart.
+- **No pairing code shown** — check `npm start` output; make sure `PHONE_NUMBER` is set (or type the number when prompted). If the session folder exists from an old login, delete `sessions/` and restart.
 - **AI doesn't reply** — make sure `GEMINI_API_KEY` is valid and the model name is correct.
 - **Paper fails to download** — the URL must be reachable from your server, return a PDF, and be under the size limit (default 20 MB).
