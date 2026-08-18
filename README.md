@@ -74,6 +74,12 @@ Set `PHONE_NUMBER` in `.env` (or just type the number when prompted). The bot pr
 2. Tap "Link with phone number instead"
 3. Enter the pairing code shown in the terminal
 
+## Deploy on Pterodactyl
+
+A ready-to-import Pterodactyl egg is included — see [`deploy/pterodactyl/README.md`](deploy/pterodactyl/README.md) for full instructions. The egg installs dependencies, sets the required `PHONE_NUMBER` variable, and exposes a live status page (pairing code + connection state) on the panel's allocated port.
+
+> WhatsApp blocks device linking from many datacenter/cloud IPs (console shows `WhatsApp rejected the connection (401)`). Run the bot on a home network or an IP WhatsApp accepts.
+
 ## Adding Papers / Notes / Model Papers
 
 All data lives in JSON files under `data/`:

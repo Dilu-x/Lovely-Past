@@ -148,10 +148,12 @@ async function startBot() {
   serverStatus.phoneNumber = phoneNumber;
   serverStatus.pairingCode = null;
 
-  // Bind the preview port so the platform's readiness probe succeeds and the
-  // status page can show the pairing code.
-  statusServer.listen(process.env.PORT || 3000, "0.0.0.0", () => {
-    logger.info(`Status page listening on http://0.0.0.0:${process.env.PORT || 3000}`);
+  // Bind the status port so the platform's readiness probe succeeds and the
+  // status page can show the pairing code. Honors PORT (Freebuff) and
+  // SERVER_PORT (Pterodactyl panels).
+  const port = process.env.PORT || process.env.SERVER_PORT || 3000;
+  statusServer.listen(port, "0.0.0.0", () => {
+    logger.info(`Status page listening on http://0.0.0.0:${port}`);
   });
 
   if (!phoneNumber) {

@@ -1,0 +1,114 @@
+{
+  "_comment": "A/L Insight Bot Pterodactyl egg. Import via Admin Panel > Nests > Import Egg, then create a server with it. See deploy/pterodactyl/README.md for full instructions.",
+  "meta": {
+    "version": "PTDL_v2",
+    "update_url": null
+  },
+  "exported_at": "2026-08-18T00:00:00+00:00",
+  "name": "A/L Insight Bot",
+  "author": "00000000-0000-0000-0000-000000000000",
+  "description": "WhatsApp AI study assistant for Sri Lankan A/L students (Baileys + Gemini). Links a WhatsApp account via pairing code (QR login is disabled) and serves a small status page on SERVER_PORT.",
+  "features": null,
+  "docker_images": {
+    "Node.js 20": "ghcr.io/parkervcp/yolks:nodejs_20",
+    "Node.js 22": "ghcr.io/parkervcp/yolks:nodejs_22"
+  },
+  "file_denylist": [],
+  "startup": "[[ -d node_modules ]] || npm install --omit=dev; node index.js",
+  "config": {
+    "files": "{}",
+    "startup": "{\"done\":\"Status page listening\"}",
+    "logs": "{\"custom\":true,\"location\":\"logs/latest.log\"}",
+    "stop": "^^C"
+  },
+  "scripts": {
+    "installation": {
+      "script": "#/bin/bash\n# A/L Insight Bot - Pterodactyl installation\ncd /mnt/server || exit 1\n\nif [ ! -f package.json ]; then\n  echo -e \"\\033[31mNo package.json found.\\033[0m Upload the repository files (or a zip of them) into the server root first, then press Reinstall.\"\n  exit 1\nfi\n\nnpm install --omit=dev || exit 1\necho -e \"Installation complete.\"",
+      "container": "node:20-bookworm-slim",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": [
+    {
+      "name": "WhatsApp phone number (pairing)",
+      "description": "Your WhatsApp number in international format WITHOUT the + sign, e.g. 94764642432. Required — pairing code is the only login method.",
+      "env_variable": "PHONE_NUMBER",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string|max:20"
+    },
+    {
+      "name": "Bot name",
+      "description": "Name shown in the WhatsApp client browser entry.",
+      "env_variable": "BOT_NAME",
+      "default_value": "A/L Insight Bot",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "string|max:64"
+    },
+    {
+      "name": "Gemini API key",
+      "description": "Google AI Studio API key. Optional — only needed for image/vision questions and the official SDK provider.",
+      "env_variable": "GEMINI_API_KEY",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string|max:200"
+    },
+    {
+      "name": "Gemini model",
+      "description": "Model used by the Gemini SDK (e.g. gemini-1.5-flash, gemini-2.0-flash).",
+      "env_variable": "GEMINI_MODEL",
+      "default_value": "gemini-1.5-flash",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "string|max:64"
+    },
+    {
+      "name": "AI provider",
+      "description": "scraper (free gemini.google.com scraping, default) | shyracore (custom API) | gemini (official SDK).",
+      "env_variable": "AI_PROVIDER",
+      "default_value": "scraper",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "string|in:scraper,shyracore,gemini"
+    },
+    {
+      "name": "Custom AI API URL",
+      "description": "Used when AI_PROVIDER=shyracore, or as a fallback when the scraper fails.",
+      "env_variable": "AI_API_URL",
+      "default_value": "https://shyracore.indevs.in/api/ai/shitsu",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string|max:255"
+    },
+    {
+      "name": "Custom AI API key",
+      "description": "API key for the custom AI API above.",
+      "env_variable": "AI_API_KEY",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string|max:200"
+    },
+    {
+      "name": "Max conversation history",
+      "description": "How many past user/assistant turns to keep per user in AI conversations.",
+      "env_variable": "MAX_HISTORY",
+      "default_value": "10",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "integer|min:1|max:100"
+    },
+    {
+      "name": "Session directory",
+      "description": "Folder where the WhatsApp login session is stored. It persists across restarts; delete it to re-link a new number.",
+      "env_variable": "SESSION_DIR",
+      "default_value": "sessions",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "string|max:64"
+    }
+  ]
+}
