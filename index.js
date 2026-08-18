@@ -15,6 +15,16 @@ import userService from "./services/userService.js";
 import { handleMessage } from "./handlers/messageHandler.js";
 
 function askPhoneNumber() {
+  // In non-interactive environments (like the Freebuff preview) there is no
+  // terminal to type into, so skip the prompt and let the caller fall back
+  // to PHONE_NUMBER / QR login instead of silently waiting 2 minutes.
+  if (!process.stdin.isTTY) {
+    logger.warn(
+      "No interactive terminal detected. Set PHONE_NUMBER in your environment (e.g. PHONE_NUMBER=94764642432) to use pairing-code login.",
+    );
+    return Promise.resolve(null);
+  }
+
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -76,10 +86,14 @@ async function startBot() {
     logger.info(`Using pairing code for number: ${phoneNumber}`);
   }
 
+  let registered = false;
+  let lastQr = null;
+  let pairingHintShown = false;
+
   const sock = makeWASocket({
     auth: state,
     logger: pino({ level: "silent" }),
-    printQRInTerminal: !phoneNumber,
+    printQRInTerminal: false,
     browser: Browsers.ubuntu(config.bot.name),
     syncFullHistory: false,
     markOnlineOnConnect: true,
@@ -87,19 +101,31 @@ async function startBot() {
 
   sock.ev.on("creds.update", saveCreds);
 
-  if (phoneNumber) {
-    requestPairingCodeWithRetry(sock, phoneNumber);
-  }
-
   sock.ev.on("connection.update", (update) => {
     const { connection, lastDisconnect, qr } = update;
 
-    if (qr) {
+    // Request the pairing code as soon as a fresh QR is generated (not right
+    // after socket creation, when the connection isn't ready yet), and
+    // re-request on every new QR so the printed code never goes stale while
+    // the user is typing it into WhatsApp.
+    if (qr && qr !== lastQr && phoneNumber && !registered) {
+      lastQr = qr;
+      requestPairingCodeWithRetry(sock, phoneNumber);
+    }
+
+    if (qr && !phoneNumber) {
       qrcode.generate(qr, { small: true });
       logger.info("Scan the QR code with WhatsApp to connect.");
+      if (!pairingHintShown) {
+        pairingHintShown = true;
+        logger.info(
+          "No PHONE_NUMBER is set, so QR login is used. To get a pairing code instead, set PHONE_NUMBER (e.g. 94764642432) and restart.",
+        );
+      }
     }
 
     if (connection === "open") {
+      registered = true;
       logger.success(`${config.bot.name} connected to WhatsApp`);
     }
 
